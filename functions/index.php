@@ -14,8 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 // Include your custom files
-include 'scrap.php';
-include 'citescrap.php';
+include include __DIR__ . '/scrap.php';    // If the file is in the same directory as index.php
+include __DIR__ . '/citescrap.php';
+
 
 // Netlify function entry point
 return function ($event) {
